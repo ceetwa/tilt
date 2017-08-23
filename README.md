@@ -12,8 +12,6 @@ which will log data every 10 mins
 
 Dependencies:
 
-sudo apt-get install bluetooth
-sudo apt-get install bluez
-sudo apt-get install python-bluez
+sudo apt-get install bluetooth python-bluez python-requests
 
-May also need to pip install PyBluez
+
