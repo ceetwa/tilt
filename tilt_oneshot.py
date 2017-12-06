@@ -76,30 +76,17 @@ def main():
     global screen
 
     parser = argparse.ArgumentParser(description='Read all Tile hydrometers in the vacinity and upload data from the specified colour to THE CLOUD!')
-    parser.add_argument('colour', nargs=1,
-                   help='colour of Tilt to read')
-    parser.add_argument('name', nargs=1,
-                   help='Beer name, including the comma and number')
-    parser.add_argument('url', nargs=1,
-                   help='URL of the Tilt spreadsheet app')
+    parser.add_argument('colour', nargs=1, help='colour of Tilt to read')
+    parser.add_argument('name', nargs=1, help='Beer name, including the comma and number')
+    parser.add_argument('url', nargs=1, help='URL of the Tilt spreadsheet app')
  
     args = parser.parse_args()
-    print(args.colour[0])
-    print(args.name[0])
-    updateSecs = 600 #time in seconds between updating the google sheet
-    
-    timestamp = time.time() #Set time for beginning of loop
-    updateTime = timestamp + updateSecs #Set the time for the next update to google sheets
-
-    
     data = getdata(args.colour[0], args.name[0])
         
     print(data)
     if active:
         r = requests.post(args.url[0], data)
         print(r.text)
-            
-
 
 if __name__ == "__main__": #dont run this as a module
     main()
