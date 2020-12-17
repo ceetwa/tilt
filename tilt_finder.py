@@ -50,7 +50,6 @@ def getdata(colour):
             if output[1] == colours[colour]: #Change this to the colour of you tilt
                 tempf = float(output[2]) #convert the string for the temperature to a float type
 		print(output)
-		['fe:77:fc:6b:24:4c', 'a495bb80c5b14b44b5121370f02d74de', '69', '1244', '18', '-52']
                 gotData = 1
 		tiltMac = output[0]
                 tiltTime = sheetsDate(datetime.datetime.now())
